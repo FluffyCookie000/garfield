@@ -16,6 +16,7 @@ badyears = [1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2022]
 
 n = 0
 amount = 0
+number = 0
 dc = 0
 mc = 0
 
@@ -54,12 +55,15 @@ while n == 0:
     with open(f"comic/{yy}/{mm}/{content[-12:]}",'wb') as f:
         shutil.copyfileobj(res.raw, f)
 
-    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")
+    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")    
     repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}'])
-    repo.index.commit(f'{content[-12:]}')
-    origin = repo.remote('origin')
-    origin.push()
-    time.sleep(4)
+    number = number + 1
+    if number == 90:
+        repo.index.commit(f'{content[-12:]}')
+        origin = repo.remote('origin')
+        origin.push()
+        number = 0
+        time.sleep(4)
 
 
     if int(yy) == today.year:
