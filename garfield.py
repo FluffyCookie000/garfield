@@ -54,7 +54,7 @@ while n == 0:
         shutil.copyfileobj(res.raw, f)
 
     repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")
-    repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}"'])
+    repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}'])
     repo.index.commit(f'{content[-12:]}')
     origin = repo.remote('origin')
     origin.push()
