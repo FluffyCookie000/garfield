@@ -1,6 +1,7 @@
 import requests 
 import shutil 
 import os
+import time
 from git import Repo
 from datetime import datetime as DT
 
@@ -58,6 +59,7 @@ while n == 0:
     repo.index.commit(f'{content[-12:]}')
     origin = repo.remote('origin')
     origin.push()
+    time.sleep(4)
 
 
     if int(yy) == today.year:
