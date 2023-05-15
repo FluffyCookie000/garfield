@@ -3,7 +3,7 @@ import shutil
 import os
 from datetime import datetime as DT
 
-# os.makedirs("garfield")
+os.makedirs("garfield")
 
 today = DT.now()
 cyy = today.year
@@ -17,12 +17,12 @@ amount = 0
 dc = 0
 mc = 0
 
-yy = "2023"
-mm = "4"
-dd = "21"
+yy = "1978"
+mm = "6"
+dd = "19"
 
-# os.makedirs(f"garfield/{yy}")
-# os.makedirs(f"garfield/{yy}/{mm}")
+os.makedirs(f"garfield/{yy}")
+os.makedirs(f"garfield/{yy}/{mm}")
 
 while n == 0:
     if int(mm) < 10:
@@ -49,7 +49,7 @@ while n == 0:
         dc = 0
 
     res = requests.get(content, stream = True)
-    with open(f"garfield/{yy}/{mm}/{content[-12:]}",'wb') as f:
+    with open(f"comic/{yy}/{mm}/{content[-12:]}",'wb') as f:
         shutil.copyfileobj(res.raw, f)
 
 
@@ -63,7 +63,7 @@ while n == 0:
             if int(dd) == 30:
                 mm = int(mm) + 1
                 mm = str(mm)
-                os.makedirs(f"garfield/{yy}/{mm}")
+                os.makedirs(f"comic/{yy}/{mm}")
                 dd = 0
         
         elif int(mm) == 2:
@@ -71,20 +71,20 @@ while n == 0:
                     if int(dd) == 29:
                         mm = int(mm) + 1
                         mm = str(mm)
-                        os.makedirs(f"garfield/{yy}/{mm}")
+                        os.makedirs(f"comic/{yy}/{mm}")
                         dd = 0   
                 else:
                     if int(dd) == 28:
                         mm = int(mm) + 1
                         mm = str(mm)
-                        os.makedirs(f"garfield/{yy}/{mm}")
+                        os.makedirs(f"comic/{yy}/{mm}")
                         dd = 0
         else:
             if int(dd) == 31:
                 if int(mm) == 12:
                     yy = int(yy) + 1
                     yy = str(yy)
-                    os.makedirs(f"garfield/{yy}")
+                    os.makedirs(f"comic/{yy}")
                     mm = 0
                     mm = str(mm)
 
