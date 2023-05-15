@@ -1,9 +1,10 @@
 import requests 
 import shutil 
 import os
+from git import Repo
 from datetime import datetime as DT
 
-os.makedirs("garfield")
+os.makedirs("comic")
 
 today = DT.now()
 cyy = today.year
@@ -21,8 +22,8 @@ yy = "1978"
 mm = "6"
 dd = "19"
 
-os.makedirs(f"garfield/{yy}")
-os.makedirs(f"garfield/{yy}/{mm}")
+os.makedirs(f"comic/{yy}")
+os.makedirs(f"comic/{yy}/{mm}")
 
 while n == 0:
     if int(mm) < 10:
@@ -90,11 +91,17 @@ while n == 0:
 
                 mm = int(mm) + 1
                 mm = str(mm)
-                os.makedirs(f"garfield/{yy}/{mm}")
+                os.makedirs(f"comic/{yy}/{mm}")
                 dd = 0            
 
     dd = int(dd) + 1
     dd = str(dd)
+
+    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")
+    repo.git.add(update=True)
+    repo.index.commit(f"{amount}")
+    origin = repo.remote(name='origin')
+    origin.push()
 
 
 print(f"\n\n\n\ndone in {str((DT.now() - today))}\n amount of comics: {amount}")
