@@ -53,6 +53,12 @@ while n == 0:
     with open(f"comic/{yy}/{mm}/{content[-12:]}",'wb') as f:
         shutil.copyfileobj(res.raw, f)
 
+    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")
+    repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}"'])
+    repo.index.commit(f'{content[-12:]}')
+    origin = repo.remote('origin')
+    origin.push()
+
 
     if int(yy) == today.year:
         if int(mm) == today.month:
@@ -97,11 +103,7 @@ while n == 0:
     dd = int(dd) + 1
     dd = str(dd)
 
-    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")
-    repo.git.add(update=True)
-    repo.index.commit(f"{amount}")
-    origin = repo.remote(name='origin')
-    origin.push()
+
 
 
 print(f"\n\n\n\ndone in {str((DT.now() - today))}\n amount of comics: {amount}")
