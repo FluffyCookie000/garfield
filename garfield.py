@@ -5,7 +5,7 @@ import time
 from git import Repo
 from datetime import datetime as DT
 
-os.makedirs("comic")
+# os.makedirs("comic")
 
 today = DT.now()
 cyy = today.year
@@ -21,11 +21,11 @@ dc = 0
 mc = 0
 
 yy = "1978"
-mm = "6"
-dd = "19"
+mm = "10"
+dd = "05"
 
-os.makedirs(f"comic/{yy}")
-os.makedirs(f"comic/{yy}/{mm}")
+# os.makedirs(f"comic/{yy}")
+# os.makedirs(f"comic/{yy}/{mm}")
 
 while n == 0:
     if int(mm) < 10:
@@ -55,7 +55,7 @@ while n == 0:
     with open(f"comic/{yy}/{mm}/{content[-12:]}",'wb') as f:
         shutil.copyfileobj(res.raw, f)
 
-    repo = Repo("C:/Users/fluff/Downloads/CODE/OTHER/garfield/garfield/.git")    
+    repo = Repo("C:/Users/fluff/Downloads/git/garfield/.git")    
     repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}'])
     number = number + 1
     if number == 90:
