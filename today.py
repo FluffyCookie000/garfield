@@ -25,11 +25,11 @@ if int(mm) < 10:
 if int(dd) < 10:
     dd = f"0{dd}"
 
-response = requests.get(f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
+response = requests.get(f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
 if response.status_code == 200:
-    content = (f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
+    content = (f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
 else:
-    content = (f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.jpg")
+    content = (f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.jpg")
 print(content)
 
 if len(str(mm)) == 2:
