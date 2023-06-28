@@ -35,11 +35,11 @@ while n == 0:
         dd = f"0{dd}"
         dc = 1
 
-    response = requests.get(f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
+    response = requests.get(f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
     if response.status_code == 200:
-        content = (f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
+        content = (f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.gif")
     else:
-        content = (f"http://images.ucomics.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.jpg")
+        content = (f"http://picayune.uclick.com/comics/ga/{yy}/ga{yy[2:]}{mm}{dd}.jpg")
     amount = amount + 1
     print(content)
 
