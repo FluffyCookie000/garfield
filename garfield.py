@@ -21,8 +21,8 @@ dc = 0
 mc = 0
 
 yy = "1978"
-mm = "10"
-dd = "05"
+mm = "6"
+dd = "19"
 
 # os.makedirs(f"comic/{yy}")
 # os.makedirs(f"comic/{yy}/{mm}")
@@ -68,7 +68,7 @@ while n == 0:
 
     if int(yy) == today.year:
         if int(mm) == today.month:
-            if int(dd) == today.day:
+            if int(dd) == today.day - 1:
                 n = 1
 
     for bm in badmonths:
