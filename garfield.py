@@ -55,7 +55,7 @@ while n == 0:
     with open(f"comic/{yy}/{mm}/{content[-12:]}",'wb') as f:
         shutil.copyfileobj(res.raw, f)
 
-    repo = Repo("C:/Users/fluff/Downloads/git/garfield/.git")    
+    repo = Repo("/home/ammy/Code/garfield/.git")    
     repo.index.add([f'comic/{yy}/{mm}/{content[-12:]}'])
     number = number + 1
     if number == 90:
