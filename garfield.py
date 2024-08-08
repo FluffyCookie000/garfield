@@ -20,9 +20,9 @@ number = 0
 dc = 0
 mc = 0
 
-yy = "1978"
-mm = "6"
-dd = "19"
+yy = "2024"
+mm = "8"
+dd = "7"
 
 # os.makedirs(f"comic/{yy}")
 # os.makedirs(f"comic/{yy}/{mm}")
